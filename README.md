@@ -5,11 +5,9 @@ Home: https://github.com/conda-incubator/ensureconda
 
 Package license: MIT
 
-Feedstock license: BSD-3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/ensureconda-feedstock/blob/master/LICENSE.txt)
 
 Summary: Install and run applications packaged with conda in isolated environments
-
-
 
 Current build status
 ====================
