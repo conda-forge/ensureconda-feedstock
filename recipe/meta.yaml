@@ -22,6 +22,8 @@ requirements:
     - pip
     - python >=3.7
     - setuptools_scm
+    - hatchling >=0.21.1
+    - hatch-vcs
   run:
     - appdirs
     - click >=5.1
