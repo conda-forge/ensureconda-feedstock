@@ -1,5 +1,5 @@
 {% set name = "ensureconda" %}
-{% set version = "1.4.3" %}
+{% set version = "1.4.4" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: e04ae2e2f872869df7e7da22dcca9bd7c42f839a55155dddb249bcdc9e6aae48
+  sha256: 2ee70b75f6aa67fca5b72bec514e66deb016792959763cbd48720cfe051a24a4
 
 build:
   number: 0
