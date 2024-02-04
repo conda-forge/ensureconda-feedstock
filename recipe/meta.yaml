@@ -1,34 +1,33 @@
 {% set name = "ensureconda" %}
 {% set version = "1.4.4" %}
 
-
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/ensureconda-{{ version }}.tar.gz
   sha256: 2ee70b75f6aa67fca5b72bec514e66deb016792959763cbd48720cfe051a24a4
 
 build:
-  number: 0
-  noarch: python
   entry_points:
     - ensureconda = ensureconda.cli:ensureconda_cli
-  script: {{ PYTHON }} -m pip install . -vv
+  noarch: python
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  number: 0
 
 requirements:
   host:
-    - pip
     - python >=3.7
-    - setuptools_scm
     - hatchling >=0.21.1
     - hatch-vcs
+    - pip
   run:
+    - python >=3.7
     - appdirs
     - click >=5.1
     - filelock
-    - python >=3.7
+    - packaging
     - requests >=2
 
 test:
@@ -42,7 +41,7 @@ test:
 
 about:
   home: https://github.com/conda-incubator/ensureconda
-  summary: Install and run applications packaged with conda in isolated environments
+  summary: Lightweight bootstrapper for a conda executable
   license: MIT
   license_file: LICENSE-MIT
 
