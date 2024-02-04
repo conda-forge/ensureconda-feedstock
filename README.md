@@ -7,7 +7,7 @@ Home: https://github.com/conda-incubator/ensureconda
 
 Package license: MIT
 
-Summary: Install and run applications packaged with conda in isolated environments
+Summary: Lightweight bootstrapper for a conda executable
 
 Current build status
 ====================
@@ -143,5 +143,6 @@ In order to produce a uniquely identifiable distribution:
 Feedstock Maintainers
 =====================
 
+* [@maresb](https://github.com/maresb/)
 * [@mariusvniekerk](https://github.com/mariusvniekerk/)
 
