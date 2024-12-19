@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/ensureconda-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/ensureconda-{{ version }}.tar.gz
   sha256: 2ee70b75f6aa67fca5b72bec514e66deb016792959763cbd48720cfe051a24a4
 
 build:
@@ -14,16 +14,16 @@ build:
     - ensureconda = ensureconda.cli:ensureconda_cli
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.7
+    - python {{ python_min }}
     - hatchling >=0.21.1
     - hatch-vcs
     - pip
   run:
-    - python >=3.7
+    - python >={{ python_min }}
     - appdirs
     - click >=5.1
     - filelock
@@ -38,6 +38,7 @@ test:
     - ensureconda --help
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/conda-incubator/ensureconda
