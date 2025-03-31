@@ -1,13 +1,13 @@
 {% set name = "ensureconda" %}
-{% set version = "1.4.5" %}
+{% set version = "1.4.6" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/ensureconda-{{ version }}.tar.gz
-  sha256: 9f515853141ae4de605c1950dc3e6b28f9abaa7b866e17746dc2d11fa4edee69
+  url: https://files.pythonhosted.org/packages/86/93/158dc5122fe7f433b7e0cd4a9ac28f416212a478ace36f26460de7b5fd1d/ensureconda-{{ version }}.tar.gz
+  sha256: a71487b31d2676f1270ba14f76485b68a9a32493960b5d0f404d63b114ad7f2c
 
 build:
   entry_points:
