@@ -1,5 +1,5 @@
 {% set name = "ensureconda" %}
-{% set version = "1.4.4" %}
+{% set version = "1.4.5" %}
 
 package:
   name: {{ name|lower }}
@@ -7,14 +7,14 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/ensureconda-{{ version }}.tar.gz
-  sha256: 2ee70b75f6aa67fca5b72bec514e66deb016792959763cbd48720cfe051a24a4
+  sha256: 9f515853141ae4de605c1950dc3e6b28f9abaa7b866e17746dc2d11fa4edee69
 
 build:
   entry_points:
     - ensureconda = ensureconda.cli:ensureconda_cli
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
+  number: 0
 
 requirements:
   host:
