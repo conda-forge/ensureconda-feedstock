@@ -2,18 +2,18 @@ schema_version: 1
 
 context:
   name: ensureconda
-  version: 1.4.6
+  version: 1.4.7
 
 package:
   name: ${{ name|lower }}
   version: ${{ version }}
 
 source:
-  url: https://files.pythonhosted.org/packages/86/93/158dc5122fe7f433b7e0cd4a9ac28f416212a478ace36f26460de7b5fd1d/ensureconda-${{ version }}.tar.gz
-  sha256: a71487b31d2676f1270ba14f76485b68a9a32493960b5d0f404d63b114ad7f2c
+  url: https://pypi.org/packages/source/e/ensureconda/ensureconda-${{ version }}.tar.gz
+  sha256: b2f3643780dad9d4b7b4965c34803e5e00f216cc7e331aa927959c304cac2359
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   python:
