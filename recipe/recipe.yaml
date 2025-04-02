@@ -1,0 +1,59 @@
+schema_version: 1
+
+context:
+  name: ensureconda
+  version: 1.4.7
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/e/ensureconda/ensureconda-${{ version }}.tar.gz
+  sha256: b2f3643780dad9d4b7b4965c34803e5e00f216cc7e331aa927959c304cac2359
+
+build:
+  number: 0
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  python:
+    entry_points:
+      - ensureconda = ensureconda.cli:ensureconda_cli
+
+requirements:
+  host:
+    - python ${{ python_min }}.*
+    - hatchling >=0.21.1
+    - hatch-vcs
+    - pip
+  run:
+    - python >=${{ python_min }}
+    - appdirs
+    - click >=5.1
+    - filelock
+    - packaging
+    - requests >=2
+
+tests:
+  - python:
+      imports:
+        - ensureconda
+      python_version: ${{ python_min }}.*
+  - requirements:
+      run:
+        - pip
+        - python ${{ python_min }}.*
+    script:
+      - pip check
+      - ensureconda --help
+
+about:
+  summary: Lightweight bootstrapper for a conda executable
+  license: MIT
+  license_file: LICENSE-MIT
+  homepage: https://github.com/conda-incubator/ensureconda
+
+extra:
+  recipe-maintainers:
+    - mariusvniekerk
+    - maresb
