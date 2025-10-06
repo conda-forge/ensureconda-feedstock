@@ -33,6 +33,7 @@ requirements:
     - filelock
     - packaging
     - requests >=2
+    - conda-package-streaming
 
 tests:
   - python:
