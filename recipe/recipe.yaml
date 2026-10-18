@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: ensureconda
-  version: "1.6.0"
+  version: "1.7.0"
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/e/ensureconda/ensureconda-${{ version }}.tar.gz
-  sha256: 52b3279cd48002cd0ed5f42a00dd1e4a9086a99d1fa68375e8920fde95f77738
+  sha256: 03cf27ffc3c976f4770263ce4fd2740d32de636da30252195b0a8cd9b7e26558
 
 build:
   number: 0
