@@ -40,7 +40,9 @@ tests:
   - python:
       imports:
         - ensureconda
-      python_version: ${{ python_min }}.*
+      python_version:
+        - ${{ python_min }}.*
+        - "*"
   - requirements:
       run:
         - pip
@@ -56,6 +58,7 @@ about:
   homepage: https://github.com/conda-incubator/ensureconda
 
 extra:
+  feedstock-name: ensureconda
   recipe-maintainers:
     - mariusvniekerk
     - maresb
