@@ -3,6 +3,7 @@ schema_version: 1
 context:
   name: ensureconda
   version: "1.7.0"
+  python_min: "3.10"
 
 package:
   name: ${{ name|lower }}
@@ -13,7 +14,7 @@ source:
   sha256: 03cf27ffc3c976f4770263ce4fd2740d32de636da30252195b0a8cd9b7e26558
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   python:
